@@ -11,7 +11,6 @@ node {
     stage("Get recipe"){
         git branch: repo_branch, url: repo_url
               echo pwd
-              echo ls
     }
 
     stage("Test recipe"){
