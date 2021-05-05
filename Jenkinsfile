@@ -23,8 +23,8 @@ node {
     
 
     stage("Test recipe"){
-         dir (recipe_folder) {
-          client.run(command: "create . ${recipe_version}@")
+        dir ('build') {
+          sh "cmake ../ && cmake --build ."
         }
     }
 
