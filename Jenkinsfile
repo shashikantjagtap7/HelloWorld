@@ -26,7 +26,7 @@ node {
     }
 
     stage("Upload packages"){
-         sh "conan upload 'hello*' -r ${serverName} --all"
+         sh "upload \"*\" --all -r ${serverName} --confirm"
         
         echo "Success"
     }
