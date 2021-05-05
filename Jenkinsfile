@@ -1,4 +1,4 @@
-def artifactory_repo = "repofromjenkins1"
+def artifactory_repo = "repofromjenkins1"   // local repository supported only here.
 node {
     def server = Artifactory.server "my_artifactory"
     def client = Artifactory.newConanClient()
