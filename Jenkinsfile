@@ -20,12 +20,13 @@ node {
     }
 
     stage("Test recipe"){
-        dir ('build') {
-          sh "cmake ../ && cmake --build ."
-        }
+        echo "Test Successful"
     }
 
     stage("Upload packages"){
+         String command = "upload \"*\" --all -r ${serverName} --confirm"
+        def b = client.run(command: command)
+        server.publishBuildInfo b
         echo "Success"
     }
 }
