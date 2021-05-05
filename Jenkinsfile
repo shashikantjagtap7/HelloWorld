@@ -21,7 +21,7 @@ node {
 
     stage("Build / Test recipe"){
        dir ('build') {
-          sh "cmake ../ && cmake --build ."
+          sh "conan build . -if=build -bf=build"
         }
     }
 
