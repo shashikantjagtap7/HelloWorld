@@ -24,7 +24,7 @@ node {
 
     stage("Test recipe"){
          dir (recipe_folder) {
-          //client.run(command: "create . ${recipe_version}@")
+          client.run(command: "create . ${recipe_version}@")
         }
     }
 
