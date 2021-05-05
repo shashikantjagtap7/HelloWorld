@@ -19,8 +19,10 @@ node {
         }
     }
 
-    stage("Test recipe"){
-        echo "Test Successful"
+    stage("Build / Test recipe"){
+       dir ('build') {
+          sh "cmake ../ && cmake --build ."
+        }
     }
 
     stage("Upload packages"){
