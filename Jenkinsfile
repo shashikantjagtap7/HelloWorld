@@ -1,6 +1,6 @@
 def artifactory_name = "artifactory"
 def artifactory_repo = "conan-local"
-def repo_url = 'https://github.com/conan-io/conan-center-index.git'
+def repo_url = 'https://github.com/shashikantjagtap7/HelloWorld.git'
 def repo_branch = "master"
 def recipe_folder = "recipes/zlib/1.2.11"
 def recipe_version = "1.2.11"
