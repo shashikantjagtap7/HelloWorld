@@ -8,7 +8,6 @@ node {
     def serverName = client.remote.add server: server, repo: artifactory_repo
     stage("Get recipe"){
         git branch: repo_branch, url: repo_url
-              echo pwd
     }
     
     stage("Get dependencies and publish build info"){
@@ -20,9 +19,7 @@ node {
     }
 
     stage("Build / Test recipe"){
-       dir ('build') {
           sh "conan build . -if=build -bf=build"
-        }
     }
 
     stage("Upload packages"){
