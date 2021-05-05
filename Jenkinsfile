@@ -12,10 +12,19 @@ node {
         git branch: repo_branch, url: repo_url
               echo pwd
     }
+    
+    stage("Get dependencies and publish build info"){
+        sh "mkdir -p build"
+        dir ('build') {
+          def b = client.run(command: "install ..")
+          server.publishBuildInfo b
+        }
+    }
+    
 
     stage("Test recipe"){
          dir (recipe_folder) {
-          client.run(command: "create . ${recipe_version}@")
+          //client.run(command: "create . ${recipe_version}@")
         }
     }
 
