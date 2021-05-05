@@ -1,8 +1,6 @@
 def artifactory_repo = "repofromjenkins1"   // local repository supported only here.
 def repo_url = 'https://github.com/shashikantjagtap7/HelloWorld.git'
 def repo_branch = "master"
-def recipe_folder = "/var/lib/jenkins/workspace/HelloWorldUploadPipeLine"
-def recipe_version = "1.o"
 
 node {
     def server = Artifactory.server "my_artifactory"
@@ -20,7 +18,6 @@ node {
           server.publishBuildInfo b
         }
     }
-    
 
     stage("Test recipe"){
         dir ('build') {
