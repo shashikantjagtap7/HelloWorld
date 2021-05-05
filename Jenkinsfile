@@ -1,4 +1,4 @@
-def artifactory_repo = "RemoteRepoFromJenkins"
+def artifactory_repo = "repofromjenkins1"
 node {
     def server = Artifactory.server "my_artifactory"
     def client = Artifactory.newConanClient()
