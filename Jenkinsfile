@@ -20,6 +20,7 @@ node {
 
     stage("Build / Test recipe"){
           sh "conan build . -if=build -bf=build"
+          sh "conan search"
     }
 
     stage("Upload packages"){
