@@ -26,9 +26,8 @@ node {
     }
 
     stage("Upload packages"){
-         String command = "upload \"hello*\" --all -r ${serverName} --confirm"
-        def b = client.run(command: command)
-        server.publishBuildInfo b
+         sh "conan upload 'hello*' -r ${serverName} --all"
+        
         echo "Success"
     }
 }
