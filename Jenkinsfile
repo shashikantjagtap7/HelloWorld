@@ -1,9 +1,9 @@
 
 node {
-    def server = Artifactory.server artifactory
+    def server = Artifactory.server "artifactory"
     stage("Get recipe"){
         echo "Success"
-        echo server
+        echo "server"
     }
 
     stage("Test recipe"){
