@@ -28,7 +28,8 @@ node {
     stage("Upload packages"){
          //String command= sh "upload \"*\" --all -r ${serverName} --confirm"
         //def b = client.run(command: command)
-        sh "upload * --all -r ${serverName} --confirm"
+        //sh "upload * --all -r ${serverName} --confirm"
+        sh "conan upload hello/1.0 — all -r=repofromjenkins1"
         
     }
 }
