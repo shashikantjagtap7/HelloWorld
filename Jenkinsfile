@@ -20,12 +20,9 @@ node {
     }
 
     stage("Build / Test recipe"){
-          dir ('conanrecipe') {
-          client.run(command: "create . ${recipe_version}@")
-        }
-          //sh "conan create ."
-          //sh "conan build . -if=build -bf=build"
-          //sh "ls build"
+          sh "conan create ."
+          sh "conan build . -if=build -bf=build"
+          sh "ls build"
           sh "conan search"
     }
 
