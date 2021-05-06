@@ -20,7 +20,7 @@ node {
     }
 
     stage("Build / Test recipe"){
-          sh "conan create ."
+          sh "conan create . vw/testing"
           sh "conan build . -if=build -bf=build"
           sh "ls build"
           sh "conan remote list"
