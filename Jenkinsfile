@@ -29,7 +29,7 @@ node {
          //String command= sh "upload \"*\" --all -r ${serverName} --confirm"
         //def b = client.run(command: command)
         //sh "upload * --all -r ${serverName} --confirm"
-        sh "conan upload hello/1.0 --all -r=repofromjenkins1"
+        sh "conan upload hello/1.0 --all -r=RemoteRepoFromJenkins"
         
     }
 }
