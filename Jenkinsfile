@@ -20,7 +20,7 @@ node {
     }
 
     stage("Build / Test recipe"){
-          sh "mkdir -p conanrecipe"
+          sh "mkdir conanrecipe"
           dir ('conanrecipe') {
           client.run(command: "create . ${recipe_version}@")
         }
