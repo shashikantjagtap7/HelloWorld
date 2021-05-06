@@ -1,4 +1,4 @@
-def artifactory_repo = "repofromjenkins1"   // local repository supported only here.
+def artifactory_repo = "artifactory"   // local repository supported only here.
 def repo_url = 'https://github.com/shashikantjagtap7/HelloWorld.git'
 def repo_branch = "master"
 def recipe_version = "1.2.11"
