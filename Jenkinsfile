@@ -1,6 +1,7 @@
 def artifactory_repo = "repofromjenkins1"   // local repository supported only here.
 def repo_url = 'https://github.com/shashikantjagtap7/HelloWorld.git'
 def repo_branch = "master"
+def recipe_version = "1.2.11"
 
 node {
     def server = Artifactory.server "my_artifactory"
@@ -14,14 +15,18 @@ node {
         sh "mkdir -p build"
         dir ('build') {
           def b = client.run(command: "install ..")
-          server.publishBuildInfo b
+          //server.publishBuildInfo b
         }
     }
 
     stage("Build / Test recipe"){
-          sh "conan create ."
-          sh "conan build . -if=build -bf=build"
-          sh "ls build"
+          sh "mkdir -p conanrecipe"
+          dir ('conanrecipe') {
+          client.run(command: "create . ${recipe_version}@")
+        }
+          //sh "conan create ."
+          //sh "conan build . -if=build -bf=build"
+          //sh "ls build"
           sh "conan search"
     }
 
