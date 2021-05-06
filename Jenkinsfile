@@ -28,6 +28,6 @@ node {
     stage("Upload packages"){
          //String command= sh "upload \"*\" --all -r ${serverName} --confirm"
         //def b = client.run(command: command)
-        sh "upload hello/1.0 --all -r ${serverName} --confirm"      
+        sh "upload hello/1.0 --all -r ${artifactory_repo} --confirm"      
     }
 }
