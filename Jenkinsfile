@@ -30,7 +30,7 @@ node {
     stage("Upload packages"){
          //String command= sh "upload \"*\" --all -r ${serverName} --confirm"
         //def b = client.run(command: command)
-        sh " printf yes | conan upload hello* -r artifactory --all"
+        sh " printf "yes" | conan upload hello* -r artifactory --all"
        
     }
 }
