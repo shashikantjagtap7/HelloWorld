@@ -28,7 +28,7 @@ node {
     stage("Upload packages"){
          //String command= sh "upload \"*\" --all -r ${serverName} --confirm"
         //def b = client.run(command: command)
-        String command = "upload * --all -r ${serverName} --confirm"
-        client.run command: command, buildInfo: buildInfo
+        sh "upload * --all -r ${serverName} --confirm"
+        
     }
 }
