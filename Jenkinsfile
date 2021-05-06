@@ -23,12 +23,13 @@ node {
           sh "conan create ."
           sh "conan build . -if=build -bf=build"
           sh "ls build"
+          sh "conan remote list"
           sh "conan search"
     }
 
     stage("Upload packages"){
          //String command= sh "upload \"*\" --all -r ${serverName} --confirm"
         //def b = client.run(command: command)
-        sh "upload hello/1.0 --all -r ${artifactory_repo} --confirm"      
+        sh "upload hello/1.0 --all -r ${serverName} --confirm"      
     }
 }
