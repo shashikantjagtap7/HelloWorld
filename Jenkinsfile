@@ -32,6 +32,11 @@ node {
          //String command= sh "upload \"*\" --all -r ${serverName} --confirm"
         //def b = client.run(command: command)
         sh " printf 'yes\nyes\nadmin\npassword' | conan upload hello* -r artifactory --all"
-       
+    }
+    
+    stage("Connecting to Test Environment"){
+       sh "#!/bin/bash"
+       sh "sshpass -p "F3fjcrz!" ssh -o StrictHostKeyChecking=no emb-shasjag@192.168.1.101"
+       sh "pwd"
     }
 }
