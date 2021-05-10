@@ -36,7 +36,7 @@ node {
     
     stage("Connecting to Test Environment"){
        sh "#!/bin/bash"
-       sh "sshpass -p 'e3-sdk' ssh -o StrictHostKeyChecking=no developer@127.0.0.1 -p 2222"
+       sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@127.0.0.1 -p 2222"
        sh "pwd"
        sh "whoami"
     }
