@@ -36,7 +36,7 @@ node {
     
     stage("Connecting to Test Environment"){
        sh "#!/bin/bash"
-       sh "ssh -tt developer@developer-VirtualBox | sshpass -p 'e3-sdk' ssh -o StrictHostKeyChecking=no emb-shasjag@192.168.122.1"
+       sh "sshpass -p 'e3-sdk' ssh -o StrictHostKeyChecking=no developer@127.0.0.1 -p 2222"
        sh "pwd"
     }
 }
