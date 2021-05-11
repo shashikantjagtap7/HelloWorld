@@ -37,7 +37,7 @@ node {
     stage("Connecting to Test Environment"){
        sh "hostname -I"
        sh "#!/bin/bash"
-       sh "sudo ProxyCommand ssh -A -t gateway ssh -t developer@127.0.0.1 -p 2222"
+       sh "ssh -A -t gateway ssh -t developer@127.0.0.1 -p 2222"
        sh "sshpass -p 'e3-sdk' ssh -o StrictHostKeyChecking=no developer@127.0.0.1 -p 2222"
        sh "hostname -I"
        sh "pwd"
