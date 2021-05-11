@@ -38,7 +38,7 @@ node {
        sh "hostname -I"
        sh "#!/bin/bash"
        //sh "ssh -A -t jenkins@127.0.0.1 ssh -t developer@127.0.0.1 -p 2222"
-       sh "sshpass -p 'e3-sdk' ssh -o StrictHostKeyChecking=no developer@192.168.1.100"
+       sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100"
        //sh "ssh -tt developer@192.168.1.100"
         sh "hostname -I"
        sh "pwd"
