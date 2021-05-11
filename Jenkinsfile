@@ -37,9 +37,9 @@ node {
     stage("Connecting to Test Environment"){
        sh "hostname -I"
        sh "#!/bin/bash"
-       //sh "sudo sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100"
+       sh "sudo sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100"
        //sh "cat ~/.ssh/id_rsa.pub | printf 'e3-sdk' | ssh developer@192.168.1.100 'cat >> .ssh/authorized_keys'"
-       sh "ssh -t -t developer@192.168.1.100"
+       //sh "ssh -t -t developer@192.168.1.100"
        //sh "hostname -I"
        //sh "pwd"
        //sh "whoami"
