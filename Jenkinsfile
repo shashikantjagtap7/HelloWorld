@@ -38,6 +38,7 @@ node {
        sh "hostname -I"
        sh "#!/bin/bash"
        sh "sshpass -p 'e3-sdk' ssh -o StrictHostKeyChecking=no developer@127.0.0.1 -p 2222"
+       sh "sh "hostname -I""
        sh "pwd"
        sh "whoami"
     }
