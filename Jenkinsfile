@@ -39,4 +39,11 @@ node {
        sh "#!/bin/bash"
        sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.184.92 pwd"
     }
+    
+    stage("Artifacts deployment"){
+       sh "pwd"
+       sh "wget -O abc.zip --auth-no-challenge --user=admin --password=admin http://localhost:8080/job/artifact%20generator/lastSuccessfulBuild/artifact/file.txt
+"
+    }
+    
 }
