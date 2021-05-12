@@ -39,4 +39,9 @@ node {
        sh "#!/bin/bash"
        sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 pwd"
     }
+    
+    stage("Download the artifact"){
+       sh "pwd"
+      
+    }
 }
