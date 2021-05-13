@@ -48,6 +48,6 @@ node {
     }
     
     stage("Download Artifacts from Artifactory"){
-     sh "curl -sSf -u "admin:password" -O 'http://localhost:8082/ui/repos/tree/General/repofromjenkins1/hello.zip'"
+     sh "curl -sSf -u 'admin:password' -O 'http://localhost:8082/ui/repos/tree/General/repofromjenkins1/hello.zip'"
     }
 }
