@@ -41,5 +41,6 @@ node {
        //sh "wget -O abc.zip --auth-no-challenge --user=admin --password=admin http://localhost:8080/job/artifact%20generator/lastSuccessfulBuild/artifact/*"
        //sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.124.93 ./mytrigger.sh"
         sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.124.93 ls"
+        sh "scp abc.zip developer@192.168.1.100:jenkins"
     }
 }
