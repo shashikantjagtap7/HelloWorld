@@ -39,6 +39,7 @@ node {
        sh "#!/bin/bash"
        sh "pwd"
        //sh "wget -O abc.zip --auth-no-challenge --user=admin --password=admin http://localhost:8080/job/artifact%20generator/lastSuccessfulBuild/artifact/*"
-       sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.184.92 ./mytrigger.sh"
+       //sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.124.93 ./mytrigger.sh"
+        sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.124.93 ls"
     }
 }
