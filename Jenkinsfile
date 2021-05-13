@@ -34,13 +34,13 @@ node {
         sh " printf 'yes\nyes\nadmin\npassword' | conan upload hello* -r artifactory --all"
     }
     
-    stage("Connecting to Test Environment & Download from Jenkins"){
+    stage("Connecting to Test Environment & Download Archives from Jenkins"){
        sh "hostname -I"
        sh "#!/bin/bash"
        sh "pwd"
         // create the abc.zip file.
        sh "wget -O abc.zip --auth-no-challenge --user=admin --password=admin http://localhost:8080/job/artifact%20generator/lastSuccessfulBuild/artifact/*"
-       //sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.124.93 ./mytrigger.sh"
+       
         sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ls" //list the content in home directory of vmware
         sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ls jenkins"
         sh "sshpass -p 'e3-sdk' scp abc.zip developer@192.168.1.100:jenkins"    // ship abc.zip from localhost to vmware.
@@ -48,6 +48,7 @@ node {
     }
     
     stage("Download Artifacts from Artifactory"){
-     sh "curl -sSf -u 'admin:password' -O 'http://localhost:8082/ui/repos/tree/General/repofromjenkins1/hello.zip'"
+     //sh "curl -sSf -u 'admin:password' -O 'http://localhost:8082/ui/repos/tree/General/repofromjenkins1/hello.zip'"
+       sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.124.93 ./mytrigger.sh"
     }
 }
