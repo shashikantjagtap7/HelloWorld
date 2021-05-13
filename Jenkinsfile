@@ -49,6 +49,7 @@ node {
     
     stage("Download Artifacts from Artifactory"){
      //sh "curl -sSf -u 'admin:password' -O 'http://localhost:8082/ui/repos/tree/General/repofromjenkins1/hello.zip'"
-       sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.124.93 ./mytrigger.sh"
+       sh "pwd"
+        sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.124.93 ./mytrigger.sh"
     }
 }
