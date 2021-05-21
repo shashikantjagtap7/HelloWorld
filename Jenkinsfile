@@ -43,7 +43,7 @@ node {
        
         sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ls" //list the content in home directory of vmware
         sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ls jenkins"
-        sh "sshpass -p 'e3-sdk' scp abc.zip developer@192.168.1.100:jenkins"    // ship abc.zip from localhost to vmware.
+        sh "sshpass -p 'e3-sdk' scp abc.txt developer@192.168.1.100:jenkins"    // ship abc.txt from localhost to vmware.
         sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ls jenkins" 
     }
     
