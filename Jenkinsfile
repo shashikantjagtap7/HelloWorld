@@ -41,16 +41,16 @@ node {
         // create the abc.zip file.
        sh "wget -O abc.txt --auth-no-challenge --user=admin --password=admin http://localhost:8080/job/artifact%20generator/lastSuccessfulBuild/artifact/*"
        
-        sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ls" //list the content in home directory of vmware
-        sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ls jenkins"
-        sh "sshpass -p 'e3-sdk' scp abc.txt developer@192.168.1.100:jenkins"    // ship abc.txt from localhost to vmware.
-        sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ls jenkins" 
+        sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.102 ls" //list the content in home directory of vmware
+        sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.102 ls jenkins"
+        sh "sshpass -p 'e3-sdk' scp abc.txt developer@192.168.1.102:jenkins"    // ship abc.txt from localhost to vmware.
+        sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.102 ls jenkins" 
     }
     
     stage("Download Artifacts from Artifactory"){
        //sh "curl -sSf -u 'admin:password' -O 'http://localhost:8082/ui/repos/tree/General/repofromjenkins1/hello.zip'"
        sh "pwd"
-       sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.100 ./mytrigger.sh"  // trigger the script from virtual m/c. change the ip from script also
+       sh "sshpass -p 'e3-sdk' ssh -tt -o StrictHostKeyChecking=no developer@192.168.1.102 ./mytrigger.sh"  // trigger the script from virtual m/c. change the ip from script also
         
     }
 }
